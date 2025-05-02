@@ -1,4 +1,4 @@
-# Autonomous-Mobile-Robot-Car
+# Autonomous Mobile Robot Car
 Our project tasked us with programming and applying a robot car that would autonomously move around a track without user input.
 
 # Instructions for Use
