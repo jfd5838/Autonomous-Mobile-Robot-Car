@@ -1,5 +1,5 @@
 # Autonomous Mobile Robot Car
-This project is about building an autonomous wheeled robot that can: Follow a line, Avoid obstacles, Recognize traffic signs like STOP, YIELD. The robot uses a Raspberry Pi 4 as its brain and two Arduino boards for controlling motors and reading sensors. It uses a Pi camera to recognize signs and ultrasonic sensors to detect obstacles. When it sees a stop sign, it stops for a moment before moving again. When it sees a yield sign, it slows down. When it sees a speed limit sign, it speeds up. 
+This project is about building an autonomous wheeled robot that can: Follow a line, Avoid obstacles, Recognize traffic signs like STOP, YIELD and SPEED LIMIT. The robot uses a Raspberry Pi 4 as its brain and two Arduino boards for controlling motors and reading sensors. It uses a Pi camera to recognize signs and ultrasonic sensors to detect obstacles. When it sees a stop sign, it stops for a moment before moving again. When it sees a yield sign, it slows down. When it sees a speed limit sign, it speeds up. 
 
 # List of Materials
     Raspberry Pi 4 (x1) 
