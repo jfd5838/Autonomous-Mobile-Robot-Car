@@ -71,10 +71,10 @@ Step 11: Final Testing
     Observe how it responds to lines, signs, and obstacles. 
     Make Appropriate changes to final script.
 
-# Instrucions for Use
+# Instructions for Use
     Power on the Raspberry Pi and Arduinos. 
     Place the robot at the start of the track. 
-    Watch the robot follow the line, stop for STOP signs, slow for YIELD signs, and stop when there is an obstacles. 
+    Watch the robot follow the line, stop for STOP signs, slow for YIELD signs, fast for SPEED LIMIT signs, and stop when there is an obstacles. 
     Power off when done.
 
 # Tips and Tricks
