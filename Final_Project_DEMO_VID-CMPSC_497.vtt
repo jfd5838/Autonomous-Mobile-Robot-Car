@@ -1,0 +1,214 @@
+WEBVTT
+
+1
+00:00:05.330 --> 00:00:16.889
+Jonathan Cunningham: Hi! This is Jonathan Cunningham doing a demo for my team and our autonomous sign detecting robot. You can see, I have the camera on over here. It's a little laggy, but
+
+2
+00:00:17.130 --> 00:00:40.859
+Jonathan Cunningham: I am just jump into everything I can show. I have gotten a few, very few perfect runs with this robot. I will say that stop signs it detects the best. Then yield. Signs are second, then speed limit. Signs are 3rd but I'll get into that a little bit and maybe dive into the code. But 1st let's do a run through and see if it can follow this track and stop with the stop sign like it's supposed to.
+
+3
+00:00:41.770 --> 00:00:46.529
+Jonathan Cunningham: I'm gonna reach over and turn on the power, for the Arduino
+
+4
+00:00:50.280 --> 00:00:53.720
+Jonathan Cunningham: don't seem to get stuck in coronary sometimes.
+
+5
+00:00:54.270 --> 00:00:57.240
+Jonathan Cunningham: Oh, they're registered to stop.
+
+6
+00:01:01.380 --> 00:01:02.920
+Jonathan Cunningham: Well, let's try another one.
+
+7
+00:01:04.620 --> 00:01:05.510
+Jonathan Cunningham: There we go.
+
+8
+00:01:07.440 --> 00:01:13.380
+Jonathan Cunningham: So on the right side of the screen you're seeing a log from
+
+9
+00:01:21.443 --> 00:01:43.340
+Jonathan Cunningham: on the right side of the screen. You're seeing a log of what's getting sent to the Arduino, and how it's communicating with the pie. You can see that since. Stop, and then it sent go. I do want to run that one more time to see if I can get a little cleaner. But you can see all these logs of it sending for different multiple different signs and what it does to the Arduino when it registers, I'll
+
+10
+00:01:43.460 --> 00:01:48.530
+Jonathan Cunningham: I can actually show you in the code real quick.
+
+11
+00:01:50.497 --> 00:01:55.280
+Jonathan Cunningham: Also, by the way, we're using flask for our camera streaming purposes.
+
+12
+00:01:56.610 --> 00:02:05.849
+Jonathan Cunningham: And on top of that for sign detection. We're using hard cascade files stop sign. One was trained the best. The other 2 are a little finicky.
+
+13
+00:02:08.710 --> 00:02:12.400
+Jonathan Cunningham: But in fact, I do want to show
+
+14
+00:02:12.940 --> 00:02:22.136
+Jonathan Cunningham: specifically the speed limit. Signs also make use of OS. Ocr. For a text recognition, so it can tell which number is looking at
+
+15
+00:02:23.980 --> 00:02:43.820
+Jonathan Cunningham: It's about it for this portion of the code. But as you saw this is, can this runs one startup of the pi you can run it through the terminal, and it can give you messages of everything that's going on between the Pi and the Arduino. Excuse the low voltage warning. I always get that with this battery pack. But
+
+16
+00:02:44.200 --> 00:02:45.989
+Jonathan Cunningham: try to run that one more time
+
+17
+00:02:48.240 --> 00:02:51.250
+Jonathan Cunningham: again. Some of this is just hardware issues.
+
+18
+00:02:52.210 --> 00:02:55.720
+Jonathan Cunningham: I've had the wheels fall off on multiple times. But
+
+19
+00:02:57.690 --> 00:03:03.559
+Jonathan Cunningham: let's see if we can get a better run, not sharing the same way.
+
+20
+00:03:06.940 --> 00:03:09.320
+Jonathan Cunningham: There we go, you know, Patchy that time.
+
+21
+00:03:11.460 --> 00:03:12.430
+Jonathan Cunningham: What's that?
+
+22
+00:03:19.070 --> 00:03:22.350
+Jonathan Cunningham: But I think you get the idea the stop sign. At least
+
+23
+00:03:25.830 --> 00:03:35.080
+Jonathan Cunningham: I would like to show the other signs. I do have them printed out. On these little stands, as you can see, it should actually be able to register on the camera.
+
+24
+00:03:37.940 --> 00:03:38.870
+Jonathan Cunningham: You
+
+25
+00:03:39.070 --> 00:03:54.439
+Jonathan Cunningham: also, you can't see from this view, but the robot does light up, depending on which sign it's looking at as an indicator of what it messages receiving, and also see on the right that it got yield, and then it got sped up after a certain amount of time after the yield was off screen.
+
+26
+00:03:56.550 --> 00:03:58.099
+Jonathan Cunningham: You can also see
+
+27
+00:04:04.920 --> 00:04:08.189
+Jonathan Cunningham: speed limit, fire a little bit.
+
+28
+00:04:10.020 --> 00:04:14.390
+Jonathan Cunningham: It ignores when it can't register what number it is.
+
+29
+00:04:14.830 --> 00:04:22.900
+Jonathan Cunningham: because sometimes they'll register numbers that aren't possible for a speed limit or aren't legal for a speed limit.
+
+30
+00:04:24.930 --> 00:04:30.660
+Jonathan Cunningham: also comes down to lighting and and positioning for these lesser trained models. Unfortunately.
+
+31
+00:04:30.900 --> 00:04:32.350
+Jonathan Cunningham: Oh, here we go.
+
+32
+00:04:32.570 --> 00:04:38.749
+Jonathan Cunningham: I read that as a 15, but you get the idea that it, when it does register something.
+
+33
+00:04:40.550 --> 00:04:49.560
+Jonathan Cunningham: sends the correct one to the Arduino, and then it will ignore it. If it's a duplicate, or if it's a number that's not feasible for a speed limit.
+
+34
+00:04:52.740 --> 00:04:57.610
+Jonathan Cunningham: Just speaking on that a little bit also. Oh, there we go, 25 in it, little Blue.
+
+35
+00:04:59.610 --> 00:05:26.840
+Jonathan Cunningham: I would like to show some of the Arduino code as well. Unfortunately, again, hardware kind of held us back a little bit, and having this run as smoothly as possible, especially in terms of line tracking. It tracks the line pretty well. I've had the wheels fall off of me multiple times like I said when trying to make turns or you get stuck at a turn that stop sign was maybe in a bad position because of stopping at the turn and losing momentum. But
+
+36
+00:05:27.660 --> 00:05:29.349
+Jonathan Cunningham: just to look at the code
+
+37
+00:05:33.071 --> 00:06:01.020
+Jonathan Cunningham: anywhere where it says serial available is sending a message, or it's getting receiving a message from the pie. Specifically, this block, right here is a lot of the logic for the sign handling the signs. So, as you saw earlier. It received stop, and then it lit up red and it stopped and then it received the command, Go after a little bit, and then reset everything, yield, just slows the car down, and then speeds it back up to whatever degree it was.
+
+38
+00:06:01.400 --> 00:06:09.670
+Jonathan Cunningham: and then also change speed, which takes in whichever integer at the end of change speed the change speed command was from the pod
+
+39
+00:06:13.060 --> 00:06:14.909
+Jonathan Cunningham: again. All this logic
+
+40
+00:06:15.130 --> 00:06:24.659
+Jonathan Cunningham: works pretty well. It's just hardware issues. Camera. That is not perfect, but something do. In fact, I would like to see if this
+
+41
+00:06:26.110 --> 00:06:27.769
+Jonathan Cunningham: shows a little clearer.
+
+42
+00:06:27.880 --> 00:06:33.889
+Jonathan Cunningham: I've had a little better luck with a phone because it's backlit, and it can detect it a little
+
+43
+00:06:34.250 --> 00:06:38.530
+Jonathan Cunningham: more, you know. Expect it a little more consistently.
+
+44
+00:06:40.870 --> 00:06:44.670
+Jonathan Cunningham: You can see that at least sees that it's there and reading unclear.
+
+45
+00:06:46.380 --> 00:06:48.209
+Jonathan Cunningham: you can get a number on it.
+
+46
+00:06:53.260 --> 00:06:55.970
+Jonathan Cunningham: No, it doesn't look like it's gonna give us a number.
+
+47
+00:07:01.510 --> 00:07:05.531
+Jonathan Cunningham: Well, you saw a little earlier that I sent 25 to the
+
+48
+00:07:06.690 --> 00:07:15.779
+Jonathan Cunningham: yeah, right here. Oh, actually, you know what it was reading 2025. It's just already changed the speed to 25. So it ignores duplicates like I said earlier. So
+
+49
+00:07:15.880 --> 00:07:19.170
+Jonathan Cunningham: that's basically the gist of all of
+
+50
+00:07:19.320 --> 00:07:23.483
+Jonathan Cunningham: the functionality for this robot. The line tracking you saw
+
+51
+00:07:24.250 --> 00:07:37.521
+Jonathan Cunningham: and all the signs that we have, you can always add more signs more cascade files train better ones for yield and speed limit to have it run smoother.
+
+52
+00:07:38.560 --> 00:07:47.915
+Jonathan Cunningham: but yeah, that's about it other than some 3 printed parts for the camera and the pie case and hooking up the battery which you'll see in
+
+53
+00:07:48.460 --> 00:07:59.499
+Jonathan Cunningham: some other angles, because I can't catch that with just this recording the screen. But that's about it for our project, and we hope to demo live and have it a little smoother by then. Thank you.
+
